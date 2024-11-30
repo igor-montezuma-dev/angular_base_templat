@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from '@env';
+
 
 import { Observable, tap } from 'rxjs';
 
 import { SigninCredentials, SigninCredentialsResponse } from '../models/auth';
 import { UserService } from './user.service';
+import { environment } from '../../../environments/environment';
 
 
 @Injectable({
