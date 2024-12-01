@@ -1,0 +1,14 @@
+.row:hover {
+  @apply cursor-pointer hover:bg-gray-300 transition-all duration-500;
+}
+
+.rating-container
+{
+  @apply flex items-center justify-center pr-8 gap-2;
+
+  mat-icon {
+    @apply text-yellow-500;
+  }
+}
+
+

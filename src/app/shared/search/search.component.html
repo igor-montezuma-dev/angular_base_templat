@@ -1,0 +1,53 @@
+<section class="search">
+  <div class="search-container">
+    <div class="input-container">
+      <mat-form-field appearance="outline" class="input-form-field">
+        <mat-label>Buscar</mat-label>
+        <input matInput [(ngModel)]="textSearch" (ngModelChange)="search()" />
+      </mat-form-field>
+
+      <div class="search-icon" *ngIf="hasSearchIcon">
+        <mat-icon>search</mat-icon>
+      </div>
+
+      <ng-container *ngIf="hasSelect">
+        <mat-form-field appearance="outline">
+          <mat-label>Opções</mat-label>
+          <mat-select matInput>
+            <mat-option> Teste </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </ng-container>
+    </div>
+
+    <ng-content select="[before]"></ng-content>
+    <div class="button-container">
+      <div class="action" *ngIf="useSecondaryButton">
+        <button
+          *ngIf="routerLinkAction; else clickButton"
+          [routerLink]="[routerLinkAction]"
+          [ngStyle]="{ width: width }">
+          {{ secondaryButtonLabel }}
+        </button>
+        <ng-template #clickButton>
+          <button (click)="clickButtonEvent.emit()" [ngStyle]="{ width: width }">
+            {{ secondaryButtonLabel }}
+          </button>
+        </ng-template>
+      </div>
+      <div class="action" *ngIf="useButton">
+        <button
+          *ngIf="routerLinkAction; else clickButton"
+          [routerLink]="[routerLinkAction]"
+          [ngStyle]="{ width: width }">
+          {{ buttonLabel }}
+        </button>
+        <ng-template #clickButton>
+          <button (click)="clickButtonEvent.emit()" [ngStyle]="{ width: width }">
+            {{ buttonLabel }}
+          </button>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+<div class="flex gap-6">
+  <div>
+    <mat-form-field>
+      <mat-label>seleccionar tienda</mat-label>
+      <mat-select [formControl]="stores" multiple>
+        <mat-select-trigger>
+          {{stores.value?.[0] || ''}}
+          @if ((stores.value?.length || 0) > 1) {
+          <span class="example-additional-selection">
+            (+{{ (stores.value?.length || 0) - 1 }} {{ stores.value?.length === 2 ? 'other' : 'others' }})
+          </span>
+          }
+        </mat-select-trigger>
+        @for (stores of storeList; track stores) {
+        <mat-option [value]="stores">{{ stores }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Seleccionar vendedor</mat-label>
+      <mat-select [formControl]="sellers" multiple>
+        <mat-select-trigger>
+          {{sellers.value?.[0] || ''}}
+          @if ((stores.value?.length || 0) > 1) {
+          <span class="example-additional-selection">
+            (+{{ (sellers.value?.length || 0) - 1 }} {{ sellers.value?.length === 2 ? 'other' : 'others' }})
+          </span>
+          }
+        </mat-select-trigger>
+        @for (sellers of sellerList; track sellers) {
+        <mat-option [value]="sellers">{{ sellers }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="flex flex-col gap-2 shadow-md p-5 rounded-lg border border-blue border-solid">
+  <article>
+    <div class="flex justify-between">
+      <h2 class="uppercase text-blue text-xl font-bold mb-3">Cliente</h2>
+      <mat-slide-toggle></mat-slide-toggle>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+      <article>
+        <h3 class="text-lg font-medium">Nombre</h3>
+        <p class="text-sm font-light">Marina Silva</p>
+      </article>
+      <article>
+        <h3 class="text-lg font-medium">CPF/UF</h3>
+        <p class="text-sm font-light">000000000-00</p>
+      </article>
+      <article>
+        <h3 class="text-lg font-medium">Teléfono</h3>
+        <p class="text-sm font-light">(00)00000-0000</p>
+      </article>
+      <article>
+        <h3 class="text-lg font-medium">Correo electrónico</h3>
+        <p class="text-sm font-light">{{ 'teste@ds.com' }}</p>
+      </article>
+    </div>
+  </article>
+  <article>
+    <h2 class="uppercase text-blue text-xl font-bold mb-3">COMPRA</h2>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+      <article>
+        <h3 class="text-lg font-medium">Valor</h3>
+        <p class="text-sm font-light">{{ 200 | currency : 'CLP' }}</p>
+      </article>
+      <article>
+        <h3 class="text-lg font-medium">Desconto</h3>
+        <p class="text-sm font-light">{{ 100 | currency : 'CLP' }}</p>
+      </article>
+      <article>
+        <h3 class="text-lg font-medium">Efectivo generado</h3>
+        <p class="text-sm font-light">{{ 100 | currency : 'CLP' }}</p>
+      </article>
+      <article>
+        <h3 class="text-lg font-medium">Vendedor</h3>
+        <p class="text-sm font-light">Carlos</p>
+      </article>
+      <article>
+        <h3 class="text-lg font-medium">Tienda</h3>
+        <p class="text-sm font-light">Tienda 1</p>
+      </article>
+    </div>
+  </article>
+</div>

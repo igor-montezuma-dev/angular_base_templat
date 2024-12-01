@@ -1,0 +1,29 @@
+@if (!fileName) {
+<div
+  (click)="inputUpload.click()"
+  (keypress)="inputUpload.click()"
+  [attr.aria-hidden]="true"
+  class="card-upload">
+  <input
+    #inputUpload
+    (change)="uploadFile($event)"
+    type="file"
+    [accept]="acceptFiles"
+    multiple
+    class="hidden" />
+  <h5 class="text-lg text-red">{{ text }}</h5>
+  <small class="uppercase text-sm">{{ fileTypes }}</small>
+</div>
+}@else {
+<div class="w-2/4 relative">
+  <img class="w-full mb-5 rounded-md" [src]="fileName" alt="" />
+  <div
+    [matTooltip]="'Remover imagem'"
+    (click)="removeImage()"
+    (keypress)="removeImage()"
+    [attr.aria-hidden]="true"
+    class="absolute bottom-0 rounded-tl-lg right-0 p-3 text-center bg-gray-300 cursor-pointer">
+    <mat-icon>delete</mat-icon>
+  </div>
+</div>
+}

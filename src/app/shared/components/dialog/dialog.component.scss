@@ -1,0 +1,38 @@
+.form {
+  display: grid;
+  height: 100%;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 4rem;
+}
+
+.cancel, .save {
+  min-width: 8rem;
+  height: 3.125rem;
+  border-radius: 5px;
+}
+
+.cancel {
+  background-color: #FFFFFF;
+  color: black;
+  border: 1px solid #000000;
+}
+
+.save {
+  background-color: #1B3357;
+  color: white;
+}

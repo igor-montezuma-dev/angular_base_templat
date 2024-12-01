@@ -1,0 +1,19 @@
+<app-card>
+  <div class="container">
+    <div class="card-content px-4">
+      <article class="">
+        <h3 class="value text-3xl font-bold text-black-300">
+          {{ isValueCurrency ? (value | currency) : value }}
+        </h3>
+      </article>
+      <h4 class="title text-black font-medium">{{ title }}</h4>
+    </div>
+    <div class="icon">
+      <div
+        class="card-icon h-14 w-14 rounded-full flex items-center justify-center"
+        [style.background-color]="bgIcon">
+        <img class="icon" [src]="icon" alt="Icone Dashboard" />
+      </div>
+    </div>
+  </div>
+</app-card>

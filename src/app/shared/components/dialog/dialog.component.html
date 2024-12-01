@@ -1,0 +1,26 @@
+<h1 mat-dialog-title >{{ inputData.title }}</h1>
+
+<form mat-dialog-content class="form flex flex-col">
+  <mat-form-field appearance="fill" class="col-span-2">
+    <mat-label>Código</mat-label>
+    <input matInput class="w-full" />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width col-span-2" appearance="fill">
+    <mat-label>Tarefa</mat-label>
+    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+  </mat-form-field>
+  <mat-form-field class="example-full-width col-span-2" appearance="fill">
+    <mat-label>Objetivo da atividade</mat-label>
+    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+  </mat-form-field>
+  <mat-form-field class="example-full-width col-span-2" appearance="fill">
+    <mat-label>Exemplo</mat-label>
+    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+  </mat-form-field>
+</form>
+
+<div mat-dialog-actions class="button-container flex justify-center md:justify-end">
+  <button (click)="closeDialog()" class="cancel mr-4">Cancelar</button>
+  <button class="save">Enviar</button>
+</div>

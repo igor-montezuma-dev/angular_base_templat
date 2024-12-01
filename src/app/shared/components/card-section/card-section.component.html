@@ -1,0 +1,9 @@
+<div class="card-section">
+  <div class="header" *ngIf="useHeader">
+    <p *ngIf="text" class="title">{{ text }}</p>
+    <ng-content select="[header]"></ng-content>
+  </div>
+  <div class="mt-2">
+    <ng-content select="[body]"></ng-content>
+  </div>
+</div>

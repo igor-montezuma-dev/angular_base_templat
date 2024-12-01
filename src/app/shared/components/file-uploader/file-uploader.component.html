@@ -1,0 +1,28 @@
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<div class="upload-container" >
+  <div class="preview-image-upload" (click)="fileInput.click()">
+    <input #fileInput type="file" id="file-upload" (change)="addImage($event)">
+    <mat-icon>cloud_upload</mat-icon>
+    <span class="title">{{titleDescription}}</span>
+    <span>{{textDescription}}</span>
+
+    <div class="actions" *ngIf="previewFiles.length">
+      <span >Adicionar mais arquivos</span>
+    </div>
+
+  </div>
+  <div class="check-image-upload" *ngFor="let file of previewFiles">
+    <div class="image-uploaded">
+      <span>{{file.name}}</span>
+      <div class="mat-actions">
+        <div class="check" matTooltip="Visualizar" (click)="previewImage(file)">
+          <mat-icon>visibility</mat-icon>
+        </div>
+        <div class="delete" matTooltip="Remover">
+          <mat-icon (click)="deleteImage(file)">delete_outline</mat-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

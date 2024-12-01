@@ -1,0 +1,27 @@
+<div class="flex items-start justify-between">
+  <div class="w-full flex">
+    <mat-form-field class="w-2/4" appearance="fill">
+      <mat-label>Buscar</mat-label>
+      <input #filter type="text" matInput (keyup.enter)="onSearch(filter.value)" />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+    <div class="search-icon" *ngIf="hasOrderFilter">
+      <mat-icon>filter_list</mat-icon>
+    </div>
+
+    <div class="filter-field" *ngIf="hasFilter">
+      <mat-form-field appearance="fill">
+        <mat-label>Selecione</mat-label>
+        <mat-select>
+          @for (option of options; track option) {
+          <mat-option [value]="option.value">{{ option.viewValue }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  @if(hasButton){
+  <button class="add-button" (click)="onButtonClick()">{{ buttonLabel }}</button>
+  }
+</div>

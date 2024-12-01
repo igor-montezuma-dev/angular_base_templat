@@ -1,0 +1,30 @@
+<app-user-details [user]="solicitation.account"></app-user-details>
+<div class="shadow-md p-5 rounded-lg border border-red border-solid mt-5">
+  <h2 class="mb-3 text-2xl font-medium">Request</h2>
+  <div class="grid grid-cols-3 gap-5">
+    <article>
+      <h3 class="text-lg font-medium">Tournament name</h3>
+      <p class="text-sm font-light">{{ solicitation.account.name }}</p>
+    </article>
+    <article>
+      <h3 class="text-lg font-medium">Awards</h3>
+      <p class="text-sm font-light">{{ solicitation.tournament.prize }}</p>
+    </article>
+    <article>
+      <h3 class="text-lg font-medium">Country</h3>
+      <p class="text-sm font-light">{{ solicitation.tournament.location.country }}</p>
+    </article>
+    <article>
+      <h3 class="text-lg font-medium">State</h3>
+      <p class="text-sm font-light">{{ solicitation.tournament.location.state }}</p>
+    </article>
+    <article>
+      <h3 class="text-lg font-medium">City</h3>
+      <p class="text-sm font-light">{{ solicitation.tournament.location.city }}</p>
+    </article>
+    <article>
+      <h3 class="text-lg font-medium">Tournament link</h3>
+      <p class="text-sm font-light">{{ solicitation.tournament.eventUrl }}</p>
+    </article>
+  </div>
+</div>

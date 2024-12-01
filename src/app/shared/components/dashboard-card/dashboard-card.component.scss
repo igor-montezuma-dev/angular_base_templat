@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+
+  justify-content: space-between;
+  gap: 30px;
+
+  .card-content {
+    width: 500px;
+    height: 162.26px;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    gap: 60px;
+  }
+
+
+  .icon{
+
+    align-self: bottom;
+  }
+}
+
+

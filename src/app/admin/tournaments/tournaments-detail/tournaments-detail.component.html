@@ -1,0 +1,48 @@
+<div class="shadow-md p-5 rounded-lg border border-red border-solid mt-5">
+  <div class="grid grid-cols-3 gap-5">
+    <article>
+      <h3 class="text-lg font-medium">Tournament name</h3>
+      <p class="text-sm font-light">{{ tournament?.title }}</p>
+    </article>
+    <article>
+      <h3 class="text-lg font-medium">Awards</h3>
+      <p class="text-sm font-light">{{ tournament?.prize }}</p>
+    </article>
+    <article>
+      <h3 class="text-lg font-medium">Status</h3>
+      <p class="text-sm font-light">{{ tournament?.status }}</p>
+    </article>
+    <article class="col-span-3">
+      <h3 class="text-lg font-medium">Description</h3>
+      <p class="text-sm font-light">{{ tournament?.description }}</p>
+    </article>
+    <article class="col-span-3">
+      <h3 class="text-lg font-medium">Rules</h3>
+      <p class="text-sm font-light">{{ tournament?.rules }}</p>
+    </article>
+    <article>
+      <h3 class="text-lg font-medium">Tournament link</h3>
+      <p class="text-sm font-light">{{ tournament?.eventUrl }}</p>
+    </article>
+    <article>
+      <h3 class="text-lg font-medium">Date</h3>
+      <p class="text-sm font-light">{{ tournament?.startDatetime | date : 'MM/dd/yyyy' : 'UTC' }}</p>
+    </article>
+    <article>
+      <h3 class="text-lg font-medium">Time</h3>
+      <p class="text-sm font-light">{{ tournament?.time }}</p>
+    </article>
+    <article>
+      <h3 class="text-lg font-medium">Country</h3>
+      <p class="text-sm font-light">{{ tournament?.location?.country }}</p>
+    </article>
+    <article>
+      <h3 class="text-lg font-medium">State</h3>
+      <p class="text-sm font-light">{{ tournament?.location?.state }}</p>
+    </article>
+    <article>
+      <h3 class="text-lg font-medium">City</h3>
+      <p class="text-sm font-light">{{ tournament?.location?.city }}</p>
+    </article>
+  </div>
+</div>

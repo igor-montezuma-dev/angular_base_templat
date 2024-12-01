@@ -1,0 +1,26 @@
+<div class="flex items-start justify-between">
+  <mat-form-field class="w-2/4">
+    <mat-label>Search</mat-label>
+    <input #filter type="text" matInput (keyup.enter)="filterTable(filter.value)" />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+  @if(pendingSolicitations > 0) {
+  <section class="flex items-center">
+    <div class="border border-solid border-gray-500 py-2 px-10 rounded-lg h-11">
+      <p>{{ pendingSolicitations }} left to be approved</p>
+    </div>
+    <button mat-stroked-button class="uppercase h-10" [routerLink]="['aprovar-solicitacoes']">Rate</button>
+  </section>
+  }
+</div>
+
+<app-commom-table
+  (handleNavigate)="navigateToPlayerDetails($event)"
+  [tableColumns]="solicitationTableColumns"
+  [dataSourceData]="solicitations">
+</app-commom-table>
+<mat-paginator
+  class="pt-3"
+  [pageSizeOptions]="[10, 30, 70, 100]"
+  [length]="totalSolicitations"
+  (page)="paginateTable($event)"></mat-paginator>

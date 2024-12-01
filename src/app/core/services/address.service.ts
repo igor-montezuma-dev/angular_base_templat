@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AddressReponse } from '@core/models/address';
+
 import { Observable } from 'rxjs';
+import { AddressReponse } from '../models/address';
 
 @Injectable({
   providedIn: 'root',

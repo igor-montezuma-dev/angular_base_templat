@@ -1,0 +1,25 @@
+<section class="grid grid-cols-1 md:grid-cols-3 gap-5">
+  <div class="md:col-span-1">
+    <app-dashboard-card
+      [value]="200"
+      icon="/assets/svg/users.svg"
+      title="Total players"
+      bgIcon="#DC282D"></app-dashboard-card>
+  </div>
+  <div class="md:col-span-1">
+    <app-dashboard-card
+      bgIcon="#DC7028"
+      [value]="200"
+      title="Pending requests"
+      icon="/assets/svg/solicitations.svg"
+      [isValueCurrency]="true"></app-dashboard-card>
+  </div>
+  <div class="md:col-span-1">
+    <app-dashboard-card
+      bgIcon="#2852DC"
+      [value]="200"
+      title="Pending messages"
+      icon="/assets/svg/chat.svg"
+      [isValueCurrency]="true"></app-dashboard-card>
+  </div>
+</section>
