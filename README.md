@@ -1,59 +1,66 @@
-# AngularBaseTemplate
+### Template Angular: Descrição e Funcionalidades
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
+Este documento descreve um template desenvolvido em Angular que abrange funcionalidades fundamentais para a construção de aplicações robustas e escaláveis. Abaixo estão os tópicos principais abordados no template:
 
-## Development server
+---
 
-To start a local development server, run:
+### **Autenticação**
+O template implementa autenticação baseada em token (JWT), com suporte para:
+- Login e logout do usuário.
+- Armazenamento seguro do token (localStorage ou sessionStorage).
+- Verificação automática do token e tratamento de sessão expirada.
 
-```bash
-ng serve
-```
+### **Decodificação do Token**
+Para gerenciar informações de autenticação, o token JWT é decodificado para extrair:
+- Identidade do usuário (e.g., `userId`, `username`).
+- Permissões e roles (e.g., `admin`, `user`).
+- Validade do token (e.g., `exp`).
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+A biblioteca **jwt-decode** é usada para esse processo, com integração fluida para Angular Services.
 
-## Code scaffolding
+### **Roteamento dos Componentes**
+O sistema de roteamento é configurado com:
+- **Rotas protegidas:** Componentes acessíveis somente após autenticação.
+- **Lazy Loading:** Carregamento otimizado de módulos para melhorar o desempenho da aplicação.
+- **Rotas dinâmicas:** Configuração baseada em roles extraídas do token JWT.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### **Auth Guards**
+O template utiliza Guards para garantir o acesso às rotas:
+- `AuthGuard`: Verifica se o usuário está autenticado.
+- `RoleGuard`: Valida as permissões do usuário para acessar determinadas rotas.
+- `DeactivateGuard`: Garante que o usuário não perca dados ao sair de formulários não salvos.
 
-```bash
-ng generate component component-name
-```
+### **Componentes Base**
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+#### **Componente de Tabelas**
+- Implementado para exibir dados tabulares com suporte a:
+  - Ordenação.
+  - Filtros.
+  - Colunas configuráveis.
+- Utiliza **Angular Material Table** para funcionalidades avançadas.
 
-```bash
-ng generate --help
-```
+#### **Paginação**
+- Sistema de paginação integrado com tabelas e listas.
+- Configuração customizável para tamanho de página e navegação.
+- Compatível com APIs que suportam paginação backend.
 
-## Building
+### **Bibliotecas de Estilização**
 
-To build the project run:
+#### **Tailwind CSS**
+- Framework utilizado para personalização de estilos.
+- Design responsivo e integração rápida com classes utilitárias.
+- Extensões SCSS configuradas para customização adicional.
 
-```bash
-ng build
-```
+#### **Angular Material**
+- Componentes prontos para uso, como botões, inputs e diálogos.
+- Tema customizado para atender ao branding do projeto.
+- Integração com os recursos de tabelas e formulários.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+### **Outros Recursos Adicionais**
+- **Configuração de ambientes** para facilitar deploys em diferentes estágios (e.g., dev, staging, production).
+- **Serviços reutilizáveis** para operações CRUD.
+- **Diretivas customizadas** para melhorar a experiência do usuário.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este template serve como base sólida para projetos Angular modernos, promovendo produtividade e escalabilidade.
