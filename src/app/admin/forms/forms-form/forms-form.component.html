@@ -1,0 +1,32 @@
+<form class="shadow-md p-5 rounded-lg border border-red border-solid w-3/4">
+  <h2 class="text-xl font-medium mb-4">Informações do formulário</h2>
+  <article class="grid grid-cols-1 gap-x-5">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input type="text" matInput />
+    </mat-form-field>
+    <h2 class="text-xl font-medium mb-4">Add question</h2>
+    <div class="border border-black">
+      <mat-form-field>
+        <mat-label>Question</mat-label>
+        <input type="text" matInput />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Question type</mat-label>
+        <mat-select>
+          <mat-option value="shortAnswer">Short answer</mat-option>
+          <mat-option value="longAnswer">Long answer</mat-option>
+          <mat-option value="numeric">Numeric</mat-option>
+          <mat-option value="multipleChoice">Multiple choice</mat-option>
+          <mat-option value="selectionBox">Checkbox</mat-option>
+          <mat-option value="dropdown">Dropdown</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </article>
+
+  <div class="w-full flex justify-end gap-5">
+    <button mat-stroked-button class="uppercase" type="button" (click)="location.back()">Cancel</button>
+    <button mat-flat-button class="uppercase" type="button" (click)="location.back()">Save</button>
+  </div>
+</form>

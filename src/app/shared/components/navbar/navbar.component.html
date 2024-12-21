@@ -1,0 +1,53 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav h-full"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    mode="side"
+    [opened]="(isHandset$ | async) === false && useNavbar"
+  >
+    <div class="my-10 w-2/4 mx-auto" *ngIf="useImage">
+      <img class="" src="assets/svg/logotipo.svg" alt="" />
+    </div>
+    <nav>
+      <ul class="pl-5 mt-8">
+        <li
+          class="link"
+          *ngFor="let topic of sidenavLinks"
+          [routerLinkActive]="'active'"
+        >
+          <a [routerLink]="topic.link"> {{ topic.text }}</a>
+        </li>
+      </ul>
+    </nav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" *ngIf="(isHandset$ | async) && useNavbar">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Institucional</span>
+    </mat-toolbar>
+    <section
+      [class.m-5]="useNavbar"
+      [class.min-h-screen]="useNavbar"
+      class="pb-10"
+    >
+      <div class="flex items-center justify-between mb-10">
+        <article class="flex gap-5 items-center">
+          <button (click)="location.back()" mat-icon-button>
+            <mat-icon>arrow_back</mat-icon>
+          </button>
+          <h1 class="text-3xl font-medium">{{ title.getTitle() }}</h1>
+        </article>
+        <app-toolbar [name]="'Admin master'" [fileUrl]="''"></app-toolbar>
+      </div>
+      <router-outlet></router-outlet>
+    </section>
+  </mat-sidenav-content>
+</mat-sidenav-container>

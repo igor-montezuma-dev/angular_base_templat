@@ -1,0 +1,26 @@
+<div class="flex items-start justify-between">
+  <mat-form-field class="w-2/4">
+    <mat-label>Search</mat-label>
+    <input #search type="text" matInput />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+
+  <button
+    mat-stroked-button
+    class="uppercase h-10"
+    [routerLink]="['novo-formulario']"
+  >
+    New form
+  </button>
+</div>
+
+<app-commom-table
+  (handleNavigate)="navigateToFormsDetails($event)"
+  [tableColumns]="formsTableColumns"
+  [dataSourceData]="forms"
+></app-commom-table>
+<mat-paginator
+  class="pt-3"
+  [pageSizeOptions]="[10, 30, 70, 100]"
+  [length]="totalForms"
+></mat-paginator>

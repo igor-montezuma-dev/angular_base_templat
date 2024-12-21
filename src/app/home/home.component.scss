@@ -1,0 +1,28 @@
+.formOutlet {
+  @apply px-14 text-white flex flex-col items-center justify-center bg-white;
+}
+
+.images-container {
+  @apply h-screen  grid place-items-center;
+  background-color: #F7F7F7;
+
+
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    h1 {
+      @apply text-3xl font-bold text-white;
+    }
+    p {
+      width: 421px;
+      height: 49px;
+      color: #FFFFFF;
+    }
+  }
+}
+
+

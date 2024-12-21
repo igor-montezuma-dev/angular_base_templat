@@ -1,0 +1,16 @@
+<app-user-details [user]="solicitation.account"></app-user-details>
+<div class="mt-5">
+  <section class="flex items-center justify-between">
+    <div class="border border-solid border-gray-500 py-2 px-10 rounded-lg h-11">
+      <p>{{ pendingSolicitations }} left to be approved</p>
+    </div>
+    <div class="flex gap-5">
+      <button (click)="reproveSolicitation(solicitation.id)" mat-stroked-button class="uppercase h-10">
+        Refuse
+      </button>
+      <button (click)="approveSolicitation(solicitation.id)" mat-stroked-button class="uppercase h-10 green">
+        Accept
+      </button>
+    </div>
+  </section>
+</div>

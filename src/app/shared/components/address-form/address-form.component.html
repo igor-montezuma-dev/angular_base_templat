@@ -1,0 +1,42 @@
+<form class="text-sm" [formGroup]="addressForm">
+  <h3 class="text-xl font-medium mb-4">Endereço</h3>
+  <article class="grid grid-cols-12 gap-x-5">
+    <mat-form-field class="col-span-2">
+      <mat-label>CEP</mat-label>
+      <input type="text" (blur)="getAddress($event)" mask="00000-000" formControlName="zipCode" matInput />
+      <mat-error>Campo obrigatório</mat-error>
+    </mat-form-field>
+    <mat-form-field class="col-span-8">
+      <mat-label>Logradouro</mat-label>
+      <input type="text" formControlName="street" matInput />
+      <mat-error>Campo obrigatório</mat-error>
+    </mat-form-field>
+    <mat-form-field class="col-span-2">
+      <mat-label>Número</mat-label>
+      <input type="text" formControlName="number" matInput />
+      <mat-error>Campo obrigatório</mat-error>
+    </mat-form-field>
+  </article>
+  <article class="grid grid-cols-12 gap-x-5">
+    <mat-form-field class="col-span-4">
+      <mat-label>Bairro</mat-label>
+      <input type="text" formControlName="district" matInput />
+      <mat-error>Campo obrigatório</mat-error>
+    </mat-form-field>
+    <mat-form-field class="col-span-4">
+      <mat-label>Cidade</mat-label>
+      <input type="text" formControlName="city" matInput />
+      <mat-error>Campo obrigatório</mat-error>
+    </mat-form-field>
+    <mat-form-field class="col-span-2">
+      <mat-label>País</mat-label>
+      <input type="text" formControlName="country" matInput />
+      <mat-error>Campo obrigatório</mat-error>
+    </mat-form-field>
+    <mat-form-field class="col-span-2">
+      <mat-label>UF</mat-label>
+      <input type="text" mask="SS" formControlName="state" matInput />
+      <mat-error>Campo obrigatório</mat-error>
+    </mat-form-field>
+  </article>
+</form>

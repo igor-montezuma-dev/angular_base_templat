@@ -1,0 +1,50 @@
+<form class="shadow-md p-5 rounded-lg border border-red border-solid w-full md:w-3/4">
+  <h2 class="text-xl font-medium mb-4">Collaborator info</h2>
+  <article class="grid grid-cols-1 md:grid-cols-2 gap-5">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input type="text" matInput />
+    </mat-form-field>
+  </article>
+  <h2 class="text-xl font-medium mb-4">Entry</h2>
+  <article class="grid grid-cols-1 md:grid-cols-2 gap-5">
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input type="text" matInput />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input class="inputPassword" matInput [type]="hide ? 'password' : 'text'" />
+      <button mat-icon-button type="button" matSuffix class="hide-btn-password" (click)="hide = !hide">
+        <mat-icon class="text-red">{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+    </mat-form-field>
+  </article>
+
+  <h2 class="text-xl font-medium mb-4">Permissions</h2>
+  <article class="grid grid-cols-1 md:grid-cols-2 gap-5">
+    <mat-form-field>
+      <mat-label>Permission</mat-label>
+      <mat-select>
+        @for (item of ['Admin', 'Admin master']; track $index) {
+        <mat-option [value]="$index"> {{ item }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </article>
+
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-5">
+    @for (item of modules; track $index) {
+    <div class="bg-gray-200 flex items-center justify-between p-3 rounded-lg">
+      <p>{{ item }}</p>
+      <mat-checkbox color="primary"></mat-checkbox>
+    </div>
+    }
+  </section>
+
+  <div class="w-full flex justify-end gap-5 mt-6">
+    <button mat-stroked-button class="uppercase" type="button" (click)="location.back()">Cancel</button>
+    <button mat-flat-button class="uppercase" type="button" (click)="location.back()">Save</button>
+  </div>
+</form>

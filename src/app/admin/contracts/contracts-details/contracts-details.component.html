@@ -1,0 +1,25 @@
+<section class="w-full md:w-2/4">
+  <app-user-details [user]="player"></app-user-details>
+  <form class="shadow-md p-5 rounded-lg border border-red border-solid w-full mt-5">
+    <h2 class="text-xl font-medium mb-4">Contract information</h2>
+    <article class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <mat-form-field>
+        <mat-label>Starts At</mat-label>
+        <input type="text" matInput mask="00/00/0000" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Ends At</mat-label>
+        <input type="text" matInput mask="00/00/0000" />
+      </mat-form-field>
+      <mat-form-field class="md:col-span-2">
+        <mat-label>Value</mat-label>
+        <input type="text" matInput [(ngModel)]="value" name="value" currencyMask />
+      </mat-form-field>
+    </article>
+
+    <div class="w-full flex justify-end gap-5">
+      <button mat-stroked-button class="uppercase" type="button" (click)="location.back()">Cancel</button>
+      <button mat-flat-button class="uppercase" type="button" (click)="location.back()">Save</button>
+    </div>
+  </form>
+</section>

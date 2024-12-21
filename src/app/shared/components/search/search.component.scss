@@ -1,0 +1,82 @@
+.search{
+  .search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+
+    @media (max-width: 720px) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .input-container{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .input-form-field{
+        width: 40%;
+        margin: 0;
+      }
+
+      ::ng-deep .mat-mdc-form-field{
+        @media (max-width: 720px) {
+          width: 100%;
+        }
+
+        .mat-mdc-form-field-subscript-wrapper{
+          display: none;
+        }
+      }
+
+      .search-icon{
+        cursor: pointer;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        border-radius: 5px;
+        border: lightgray 0.5px solid;
+        max-height: 40px;
+
+        @media (max-width: 720px) {
+          display: none !important;
+        }
+      }
+    }
+
+    .action{
+      > button {
+        width: 220px;
+        height: 50px;
+        cursor: pointer;
+        height: 50px;
+        padding: 0 32px;
+        background: #000000;
+        border-radius: 6px;
+        border: none;
+        font: normal normal 600 14px/21px;
+        letter-spacing: 0.28px;
+        color: #FFFFFF;
+        text-transform: uppercase;
+
+        @media (max-width: 720px) {
+          width: 100%;
+        }
+      }
+    }
+
+    .button-container{
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      @media (max-width: 720px) {
+        margin-top: 8px;
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+<div class="header px-6">
+  <img src="assets/img/header-logo.png" alt="" />
+  <app-header-toolbar></app-header-toolbar>
+</div>
+<mat-sidenav-container>
+  <mat-sidenav
+    #drawer
+    class="sidenav h-full"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    mode="side"
+    [opened]="(isHandset$ | async) === false && useNavbar">
+    <div class="flex h-full w-full">
+      <div class="w-full">
+        <nav>
+          <ul class="pl-5 mt-8">
+            <li
+              class="link flex items-center"
+              *ngFor="let topic of sidenavLinks"
+              [routerLinkActive]="'active'">
+              <mat-icon class="mat-18 mr-2">{{ topic.icon }}</mat-icon>
+              <a [routerLink]="topic.link">{{ topic.text }}</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" *ngIf="(isHandset$ | async) && useNavbar">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Gerencial</span>
+    </mat-toolbar>
+    <section [class.min-h-screen]="'100vh'">
+      <!-- <div class="flex items-center justify-between mb-10">
+        <article class="flex gap-5 items-center">
+          <button (click)="location.back()" mat-icon-button><mat-icon>arrow_back</mat-icon></button>
+          <h1 class="text-3xl font-medium">{{ title.getTitle() }}</h1>
+        </article>
+        <app-toolbar></app-toolbar>
+      </div> -->
+
+      <router-outlet></router-outlet>
+    </section>
+  </mat-sidenav-content>
+</mat-sidenav-container>

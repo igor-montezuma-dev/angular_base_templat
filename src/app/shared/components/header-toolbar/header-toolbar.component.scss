@@ -1,0 +1,46 @@
+.toolbar{
+  gap: 12px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+  padding: 0px 20px;
+
+  color: #000000;
+
+
+
+
+  img{
+    border-radius: 50%;
+  }
+
+  .welcome-text{
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 15px;
+    color: #FFFFFF
+  }
+
+  .user-name{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    color: #FFFFFF
+  }
+}
+
+mat-icon{
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 600px) {
+  .toolbar {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+  }
+  .toolbar > *:not(mat-icon) {
+    display: none;
+  }
+}

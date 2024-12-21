@@ -1,0 +1,11 @@
+.mat-mdc-form-field {
+    @apply w-full;
+  }
+  button[mat-flat-button] {
+    @apply bg-red text-white  w-40;
+  }
+  
+  button[mat-stroked-button] {
+    @apply w-40;
+  }
+  

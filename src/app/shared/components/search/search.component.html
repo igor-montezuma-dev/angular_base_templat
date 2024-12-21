@@ -1,0 +1,22 @@
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+<section class="search">
+  <div class="flex items-start justify-between">
+    <mat-form-field class="w-2/4">
+      <mat-label>Buscar</mat-label>
+      <input type="text" matInput />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+
+    <div class="search-icon" (click)="search()" *ngIf="!useOptions && !fullSearch">
+      <mat-icon>filter_list</mat-icon>
+    </div>
+  </div>
+
+  <div class="action" *ngIf="useButton">
+    <ng-content select="[before]"></ng-content>
+    <div [routerLink]="[routerLinkAction]">
+      <app-button>{{ buttonLabel }}</app-button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,10 @@
+button[mat-stroked-button] {
+    @apply bg-red text-white h-11  w-40;
+  }
+  button[mat-stroked-button].green {
+    @apply bg-green text-white h-11  w-40;
+  }
+  
+  .proof {
+    background-color: #EEEEEE;
+  }

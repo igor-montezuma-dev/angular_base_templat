@@ -1,0 +1,40 @@
+<section class="text-black card-container p-10">
+  <h1 class="text-base md:text-2xl font-extrabold">Seja bem vindo (a)!</h1>
+
+  <form [formGroup]="loginForm" (submit)="submit()" class="grid grid-cols-1 text-sm mt-7 mx-auto">
+    <mat-form-field>
+      <mat-label>E-mail</mat-label>
+      <mat-icon matPrefix>person</mat-icon>
+      <input class="inputEmail" matInput type="email" formControlName="credential" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Senha</mat-label>
+      <mat-icon matPrefix>lock</mat-icon>
+      <input class="inputPassword" formControlName="password" matInput [type]="hide ? 'password' : 'text'" />
+      <button mat-icon-button type="button" matSuffix class="hide-btn-password" (click)="hide = !hide">
+        <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <p class="mb-3">
+      <span
+        >Esqueceu a senha?
+        <span class="click-here cursor-pointer font-bold" [routerLink]="['../recuperar-senha']"
+          >Clique aqui!</span
+        ></span
+      >
+    </p>
+
+    <button
+      [disabled]="loginForm.invalid"
+      class="py-4 login-button"
+      [ngClass]="{ disabled: loginForm.invalid }">
+      Entrar
+    </button>
+  </form>
+  <div class="flex flex-col items-center justify-center gap-4 mt-4">
+    <h1 class="bold">Ainda não tem cadastro?</h1>
+    <h1 class="click-here">Clique aqui!</h1>
+  </div>
+</section>
